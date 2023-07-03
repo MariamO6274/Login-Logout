@@ -3,6 +3,7 @@ import LoginPage from "./components/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Logout from "./components/Logout";
+import Missing from "./components/MissingPage";
 
 function App() {
   const isAuthenticatedUser = sessionStorage.getItem("isAuthenticated"); //for logout button/condotional rendering
@@ -15,10 +16,9 @@ function App() {
       <Router>
         <Routes>
           {!isAuthenticatedUser ? ( <Route path="/" element={<LoginPage />} /> ) : (<Route path="/" element={<Logout />} />)}
-
-          {/* <Route path="/" element={<LoginPage />} /> */}
           <Route element={<ProtectedRoutes />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="*" element={<Missing />} />
           </Route>
         </Routes>
       </Router>

@@ -12,12 +12,12 @@ function Dashboard(props) {
     }
   return (
     <div>
-        Welcome our website..!!
-        Login was successfuly
-        <br/>
-    <button onClick={goHomeHandel}>Home</button>
+      Welcome our website..!! Login was successfuly
+      <br />
+      <br />
+      <button onClick={goHomeHandel}>Home</button>
     </div>
-  )
+  );
 }
 
 // what are propTypes??
